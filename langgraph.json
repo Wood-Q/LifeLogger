@@ -1,0 +1,14 @@
+{
+  "dockerfile_lines": [],
+  "graphs": {  },
+  "python_version": "3.12",
+  "env": "./.env",
+  "dependencies": ["."],
+  "http": {
+    "cors": {
+      "allow_origins": ["*"],
+      "allow_methods": ["*"],
+      "allow_headers": ["*"]
+    }
+  }
+}
