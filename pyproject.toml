@@ -8,6 +8,7 @@ dependencies = [
     "firecrawl-py>=2.16.5",
     "jinja2>=3.1.6",
     "langchain>=0.3.27",
+    "langchain-core>=0.3.74",
     "langchain-openai>=0.3.30",
     "langchain-tavily>=0.2.11",
     "langgraph>=0.6.4",
@@ -15,3 +16,32 @@ dependencies = [
     "rich>=14.1.0",
     "socksio>=1.0.0",
 ]
+
+[tool.ruff]
+target-version = "py312"
+
+[tool.pyright]
+# 告诉 Pyright 你的项目代码在哪里
+include = ["src", "tests"]
+
+# 排除不需要检查的目录
+exclude = ["**/node_modules", "**/__pycache__"]
+
+# 明确告知你的 Python 版本
+pythonVersion = "3.12"
+
+# 告知 Pyright 虚拟环境的位置，以便它能正确找到并分析你的项目依赖
+# 这对于获取第三方库的类型信息至关重要
+venvPath = "."
+venv = ".venv" # 相对于 venvPath 的路径
+
+# 这是 Pyright 的核心功能：类型检查模式
+# "off": 关闭
+# "basic": 基础检查，报告一些明显的错误
+# "standard": 标准模式，Pylance 默认值，这是推荐的起点
+# "strict": 严格模式，开启所有可选的检查规则，是新项目的最佳选择
+typeCheckingMode = "standard"
+
+# 你还可以在标准模式的基础上，手动开启或关闭特定的诊断规则
+reportMissingImports = true
+reportUnusedVariable = "warning" # 将未使用的变量报告为警告而非错误

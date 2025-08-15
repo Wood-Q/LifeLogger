@@ -1,0 +1,90 @@
+2025-08-14 15:52:30.0765 - INFO - graphrag.cli.index - Logging enabled at /Users/bytedance/Mokio/LifeLogger/ragtest/logs/logs.txt
+2025-08-14 15:53:45.0210 - INFO - graphrag.index.validate_config - LLM Config Params Validated
+2025-08-14 15:53:45.0590 - ERROR - graphrag.language_model.providers.fnllm.utils - Error Invoking LLM
+Traceback (most recent call last):
+  File "/Users/bytedance/.local/share/uv/tools/graphrag/lib/python3.12/site-packages/fnllm/base/base_llm.py", line 144, in __call__
+    return await self._decorated_target(prompt, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bytedance/.local/share/uv/tools/graphrag/lib/python3.12/site-packages/fnllm/base/services/rate_limiter.py", line 75, in invoke
+    result = await delegate(prompt, **args)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bytedance/.local/share/uv/tools/graphrag/lib/python3.12/site-packages/fnllm/base/base_llm.py", line 126, in _decorator_target
+    output = await self._execute_llm(prompt, kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bytedance/.local/share/uv/tools/graphrag/lib/python3.12/site-packages/fnllm/openai/llm/openai_embeddings_llm.py", line 126, in _execute_llm
+    result_raw = await self._client.embeddings.with_raw_response.create(
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bytedance/.local/share/uv/tools/graphrag/lib/python3.12/site-packages/openai/_legacy_response.py", line 381, in wrapped
+    return cast(LegacyAPIResponse[R], await func(*args, **kwargs))
+                                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bytedance/.local/share/uv/tools/graphrag/lib/python3.12/site-packages/openai/resources/embeddings.py", line 251, in create
+    return await self._post(
+           ^^^^^^^^^^^^^^^^^
+  File "/Users/bytedance/.local/share/uv/tools/graphrag/lib/python3.12/site-packages/openai/_base_client.py", line 1794, in post
+    return await self.request(cast_to, opts, stream=stream, stream_cls=stream_cls)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bytedance/.local/share/uv/tools/graphrag/lib/python3.12/site-packages/openai/_base_client.py", line 1594, in request
+    raise self._make_status_error_from_response(err.response) from None
+openai.AuthenticationError: Error code: 401 - {'error': {'message': 'Incorrect API key provided: <API_KEY>. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}}
+2025-08-14 15:53:45.0592 - ERROR - graphrag.index.validate_config - Embedding LLM configuration error detected. Exiting...
+Error code: 401 - {'error': {'message': 'Incorrect API key provided: <API_KEY>. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}}
+2025-08-14 17:01:58.0799 - INFO - graphrag.cli.index - Logging enabled at /Users/bytedance/Mokio/LifeLogger/ragtest/logs/logs.txt
+2025-08-14 17:02:58.0982 - INFO - graphrag.index.validate_config - LLM Config Params Validated
+2025-08-14 17:02:59.0423 - ERROR - graphrag.language_model.providers.fnllm.utils - Error Invoking LLM
+Traceback (most recent call last):
+  File "/Users/bytedance/.local/share/uv/tools/graphrag/lib/python3.12/site-packages/fnllm/base/base_llm.py", line 144, in __call__
+    return await self._decorated_target(prompt, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bytedance/.local/share/uv/tools/graphrag/lib/python3.12/site-packages/fnllm/base/services/rate_limiter.py", line 75, in invoke
+    result = await delegate(prompt, **args)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bytedance/.local/share/uv/tools/graphrag/lib/python3.12/site-packages/fnllm/base/base_llm.py", line 126, in _decorator_target
+    output = await self._execute_llm(prompt, kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bytedance/.local/share/uv/tools/graphrag/lib/python3.12/site-packages/fnllm/openai/llm/openai_embeddings_llm.py", line 126, in _execute_llm
+    result_raw = await self._client.embeddings.with_raw_response.create(
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bytedance/.local/share/uv/tools/graphrag/lib/python3.12/site-packages/openai/_legacy_response.py", line 381, in wrapped
+    return cast(LegacyAPIResponse[R], await func(*args, **kwargs))
+                                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bytedance/.local/share/uv/tools/graphrag/lib/python3.12/site-packages/openai/resources/embeddings.py", line 251, in create
+    return await self._post(
+           ^^^^^^^^^^^^^^^^^
+  File "/Users/bytedance/.local/share/uv/tools/graphrag/lib/python3.12/site-packages/openai/_base_client.py", line 1794, in post
+    return await self.request(cast_to, opts, stream=stream, stream_cls=stream_cls)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bytedance/.local/share/uv/tools/graphrag/lib/python3.12/site-packages/openai/_base_client.py", line 1594, in request
+    raise self._make_status_error_from_response(err.response) from None
+openai.AuthenticationError: Error code: 401 - {'error': {'message': 'Incorrect API key provided: <API_KEY>. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}}
+2025-08-14 17:02:59.0425 - ERROR - graphrag.index.validate_config - Embedding LLM configuration error detected. Exiting...
+Error code: 401 - {'error': {'message': 'Incorrect API key provided: <API_KEY>. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}}
+2025-08-14 17:05:43.0215 - INFO - graphrag.cli.index - Logging enabled at /Users/bytedance/Mokio/LifeLogger/ragtest/logs/logs.txt
+2025-08-14 17:06:43.0384 - INFO - graphrag.index.validate_config - LLM Config Params Validated
+2025-08-14 17:06:43.0837 - ERROR - graphrag.language_model.providers.fnllm.utils - Error Invoking LLM
+Traceback (most recent call last):
+  File "/Users/bytedance/.local/share/uv/tools/graphrag/lib/python3.12/site-packages/fnllm/base/base_llm.py", line 144, in __call__
+    return await self._decorated_target(prompt, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bytedance/.local/share/uv/tools/graphrag/lib/python3.12/site-packages/fnllm/base/services/rate_limiter.py", line 75, in invoke
+    result = await delegate(prompt, **args)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bytedance/.local/share/uv/tools/graphrag/lib/python3.12/site-packages/fnllm/base/base_llm.py", line 126, in _decorator_target
+    output = await self._execute_llm(prompt, kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bytedance/.local/share/uv/tools/graphrag/lib/python3.12/site-packages/fnllm/openai/llm/openai_embeddings_llm.py", line 126, in _execute_llm
+    result_raw = await self._client.embeddings.with_raw_response.create(
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bytedance/.local/share/uv/tools/graphrag/lib/python3.12/site-packages/openai/_legacy_response.py", line 381, in wrapped
+    return cast(LegacyAPIResponse[R], await func(*args, **kwargs))
+                                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bytedance/.local/share/uv/tools/graphrag/lib/python3.12/site-packages/openai/resources/embeddings.py", line 251, in create
+    return await self._post(
+           ^^^^^^^^^^^^^^^^^
+  File "/Users/bytedance/.local/share/uv/tools/graphrag/lib/python3.12/site-packages/openai/_base_client.py", line 1794, in post
+    return await self.request(cast_to, opts, stream=stream, stream_cls=stream_cls)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bytedance/.local/share/uv/tools/graphrag/lib/python3.12/site-packages/openai/_base_client.py", line 1594, in request
+    raise self._make_status_error_from_response(err.response) from None
+openai.AuthenticationError: Error code: 401 - {'error': {'message': 'Incorrect API key provided: ollama. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}}
+2025-08-14 17:06:43.0840 - ERROR - graphrag.index.validate_config - Embedding LLM configuration error detected. Exiting...
+Error code: 401 - {'error': {'message': 'Incorrect API key provided: ollama. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}}

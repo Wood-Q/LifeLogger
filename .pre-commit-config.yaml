@@ -1,0 +1,36 @@
+# .pre-commit-config.yaml
+
+# 最小的 pre-commit 版本要求，可选
+minimum_pre_commit_version: '2.9.0'
+
+
+repos:
+# -   # 仓库 1: pre-commit 官方提供的通用钩子
+#     repo: https://github.com/pre-commit/pre-commit-hooks
+#     rev: v6.0.0
+#     hooks:
+#     -   id: trailing-whitespace # 移除行尾多余空格
+#     -   id: end-of-file-fixer # 保证文件末尾有空行
+#     -   id: check-yaml # 检查 YAML 文件语法
+#         # types: [yaml] 会自动应用到 .yml 和 .yaml 文件
+#     -   id: check-json # 检查 JSON 文件语法
+#     -   id: check-toml # 检查 TOML 文件语法
+#     -   id: check-added-large-files # 防止提交大于 5MB 的大文件
+#         args: ['--maxkb=5120']
+
+# -   # 仓库 2: Ruff - 高性能的 Linter 和 Formatter
+#     repo: https://github.com/astral-sh/ruff-pre-commit
+#     rev: v0.12.9
+#     hooks:
+#     -   id: ruff
+#         # 使用 args 开启自动修复功能
+#         args: [--fix]
+#     -   id: ruff-format
+
+-  # 仓库 0: 防止密钥泄露的trufflehog
+    repo: https://github.com/trufflesecurity/trufflehog
+    rev: v3.90.5
+    hooks:
+    -   id: trufflehog
+        name: TruffleHog - Scan for secrets
+        # 如果有误报，可以在代码旁用 #trufflehog:ignore 注释掉
